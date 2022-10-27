@@ -1,0 +1,60 @@
+_____________________________________________________
+------------------------ GIT ------------------------
+
+=> sudo apt-get install git-all
+
+
+______________________________________________________
+------------------------ SSH ------------------------
+
+1 - Gerando uma nova chave SSH
+=> ssh-keygen -t ed25519 -C "your_email@example.com"
+
+>>>>> Isso cria uma nova chave SSH, usando o e-mail fornecido como um rótulo. <<<<<
+exemplo de saida: > Generating public/private ALGORITHM key pair.
+
+2 - Enter pra tudo
+* Ao clicar enter para todas as opções evita ter que colocar essa senha para cada push...
+
+3 - Adicionando sua chave SSH ao agente ssh
+=> eval "$(ssh-agent -s)"
+
+>>>>> Isso inicia o ssh-agent em segundo plano. <<<<<
+exemplo de saida: > Agent pid 59566
+
+4 - Adicione sua chave privada SSH ao agente ssh
+=> ssh-add ~/.ssh/id_ed25519
+
+
+_________________________________________________________
+------------------------ GITHUB ------------------------
+
+1 - Adicionando uma nova chave SSH à sua conta do GitHub
+=> cat ~/.ssh/id_ed25519.pub
+
+>>>>> Copia a chave pública SSH para sua área de transferência. <<<<<
+
+2 - No github clica em configurações ou settings
+
+3 - Já nas configurações clica em SSH and GPG keys
+
+4 - Verifica se há alguma chave SSH, caso tenha remove
+
+5 - Clica em new SSh key
+
+6 - Coloca um título a preferência e cola o código copiado no passo 1.
+
+
+____________________________________________________________
+------------------------ IDENTIDADE ------------------------
+
+1 - Para que o histórico de commits fique registrado no seu nome, você precisa informar ao Git seu email e senha.
+
+=> git config --global user.name "Seu nome"
+=> git config --global user.email seuemail@exemplo.br
+
+
+____________________________________________________________
+--------------------------- LINKS --------------------------
+
+https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account

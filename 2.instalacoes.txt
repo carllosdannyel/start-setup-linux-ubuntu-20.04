@@ -1,0 +1,30 @@
+_____________________________________________________
+------------------------ CURL -----------------------
+
+=> sudo apt install curl
+=> curl --version          -> para validar a instalação
+
+
+_____________________________________________________
+------------------------ NPM ------------------------
+
+=> sudo apt install npm
+=> npm --version          -> para validar a instalação
+
+
+_____________________________________________________
+------------------------ NVM ------------------------
+
+=> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+=> source ~/.bashrc
+=> nvm list-remote          -> para validar a instalação
+=> nvm install 16
+=> nvm use 16
+=> node -v                  -> para validar a instalação
+
+____________________________________________________________
+--------------------------- LINKS --------------------------
+
+https://websetnet.net/pt/how-to-install-curl-on-ubuntu-quick-tip/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-pt     -> opção 3

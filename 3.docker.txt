@@ -1,0 +1,60 @@
+_______________________________________________________
+------------------------ DOCKER -----------------------
+
+1 - Desinstale versões anteriores
+=> sudo apt-get remove docker* containerd runc
+
+2 - Instalando as dependências iniciais
+=> sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+3 - Adicionando a chave pública do repositório Docker em nossa máquina
+=> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+* Se tudo der certo, você não deve receber nenhum retorno visual.
+
+4 - Adicionando o repositório remoto na lista do apt
+=> echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+  | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+5 - Instalando o Docker no Linux
+=> sudo apt-get update
+=> sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+6 - Adicionando seu usuário ao grupo de usuários Docker
+=> sudo groupadd docker
+
+* Caso ocorra uma mensagem: groupadd: grupo 'docker' já existe, é só prosseguir.
+
+7 - Então, use o comando abaixo para adicionar seu usuário a este novo grupo:
+=> sudo usermod -aG docker $USER
+=> newgrp docker
+
+** fechar o terminal e abrir novamente
+
+8 - Inicie o Daemon do Docker
+
+comandos cli do Daemon
+
+- sudo systemctl status docker
+- sudo systemctl start docker
+- sudo systemctl enable docker
+
+9 - Valide a instalação
+=> docker run hello-world
+
+* Se receber um hello word do docker, quer dizer que ocorreu tudo bem ;)
+
+
+_______________________________________________________
+-------------------- DOCKER-COMPOSE -------------------
+
+1 - Instalação do Compose
+=> sudo curl -L "https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+=> sudo chmod +x /usr/local/bin/docker-compose
+=> docker-compose --version           -> para validar a instalação

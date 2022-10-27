@@ -1,0 +1,19 @@
+______________________________________________________
+------------------------ MYSQL -----------------------
+1 - Subindo um container com a imagem do MYSQL
+=> docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=password mysql:8.0.29
+
+2 - Princiais comandos 
+
+* pausar | stop container * 
+=> docker stop mysql
+
+* iniciar | start container * 
+=> docker start mysql
+
+3 - remover container parado ou em execução respectivamente
+=> docker rm mysql
+=> docker rm -f mysql
+
+
+==========> JAMAIS INSTALAR O MYSQL NA MÁQUINA NO UBUNTU APÓS FORMATAÇÃO <==========

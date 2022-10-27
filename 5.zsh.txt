@@ -1,0 +1,14 @@
+______________________________________________________
+------------------------ SSH -------------------------
+
+1 - Instalando o zsh
+=> sudo apt-get install zsh 
+
+2 - O próximo passo é fazer com que o Zsh seja o interpretador de comandos padrão do sistema.
+=> chsh -s $(which zsh)
+
+3 - Após a instalação do Zsh, podemos instalar o framework Oh My Zsh.
+=> sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+4 - Alterando os temas do Oh My Zsh
+=> sudo nano ~/.zshrc
